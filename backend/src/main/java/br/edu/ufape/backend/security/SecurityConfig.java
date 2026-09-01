@@ -104,6 +104,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/auth/**").permitAll()
                         .requestMatchers("/api/admin/**").hasRole(ROLE_ADMIN)
+                        .requestMatchers("/api/reports/**").hasRole(ROLE_ADMIN)
                         .requestMatchers(HttpMethod.POST, "/api/resources").hasRole(ROLE_ADMIN)
                         .requestMatchers(HttpMethod.PUT, "/api/resources/**").hasRole(ROLE_ADMIN)
                         .requestMatchers(HttpMethod.GET, "/api/resources/disponibilidade").authenticated()
